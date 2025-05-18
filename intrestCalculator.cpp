@@ -49,20 +49,23 @@ int main() {
             std::cout << "How long has it been since you made this deposit: ";
             std::cin >> timeSince;
 
-            
+            // Try catch and convert all the numerical data to floats
             try {
                 principalFloat = stof(principal);
                 try {
                     rateFloat = stof(rate);
                     try {
                         timeSinceFloat = stof(timeSince);
-                        if (rateFloat < 0) {
-                            std::cout << " Your rate cannot be 0! \n ";
+                        // Check if their are negatives
+                        if (rateFloat <= 0) {
+                            std::cout << " Your rate cannot be 0 or negative! \n ";
                         } else if (timeSinceFloat < 0) {
                             std::cout << "Your amount of time cannot be 0!\n";
                         } else {
+                        // If everything is correct we break from the loop
                             break;
                         }
+                        
                     } catch (std::invalid_argument) {
                         std::cout << timeSince << "is not a float!";
                     }
