@@ -58,7 +58,8 @@ int main() {
                         timeSinceFloat = stof(timeSince);
                         // Check if their are negatives
                         if (rateFloat <= 0) {
-                            std::cout << " Your rate cannot be 0 or negative! \n ";
+                            std::cout <<
+                             " Your rate cannot be 0 or negative! \n ";
                         } else if (timeSinceFloat < 0) {
                             std::cout << "Your amount of time cannot be 0!\n";
                         } else {
