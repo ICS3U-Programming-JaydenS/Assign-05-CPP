@@ -83,6 +83,8 @@ int main() {
     }
     // Calls interest function
     interest = interest_calc(principalFloat, rateFloat, time, timeSinceFloat);
+
+    // Display answer
     std::cout << "\n";
     std::cout << "From depositing " << principalFloat << "$"
               << " For " << timeSinceFloat << " " << time << " with a "
