@@ -45,7 +45,7 @@ int main() {
 
         // Make sure that they gave a valid time range
         if (time == "years" || time == "months" || time == "days") {
-            // Get how long its been since their deposit
+            // Get how long its been since the deposit
             std::cout << "How long has it been since you made this deposit: ";
             std::cin >> timeSince;
 
@@ -56,7 +56,7 @@ int main() {
                     rateFloat = stof(rate);
                     try {
                         timeSinceFloat = stof(timeSince);
-                        // Check if their are negatives
+                        // Check if there are negatives
                         if (rateFloat <= 0) {
                             std::cout <<
                              " Your rate cannot be 0 or negative! \n ";
