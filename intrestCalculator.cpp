@@ -65,6 +65,7 @@ int main() {
                         // If everything is correct we break from the loop
                             break;
                         }
+
                         // If any of the data is erroneous (string) this happens
                     } catch (std::invalid_argument) {
                         std::cout << timeSince << "is not a float!";
