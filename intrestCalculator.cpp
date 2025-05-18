@@ -19,6 +19,7 @@ int interest_calc(float p, float r, std::string t, float amt_of_t) {
 }
 
 int main() {
+    // Define my variables
     std::string principal;
     std::string rate;
     std::string time;
@@ -27,18 +28,28 @@ int main() {
     float rateFloat;
     float timeSinceFloat;
     float interest;
+
+    // Great user
     std::cout
         << "Welcome to Jayden's interest calculator! \n";
+
+    // Make sure that if error in try catch it loops back
     while (true) {
+        // Get user input
         std::cout << "What is your starting amount: ";
         std::cin >> principal;
         std::cout << "What is the rate (%): ";
         std::cin >> rate;
         std::cout << "Please enter the range of time (years, months, days): ";
         std::cin >> time;
+
+        // Make sure that they gave a valid time range
         if (time == "years" || time == "months" || time == "days") {
+            // Get how long its been since their deposit
             std::cout << "How long has it been since you made this deposit: ";
             std::cin >> timeSince;
+
+            
             try {
                 principalFloat = stof(principal);
                 try {
