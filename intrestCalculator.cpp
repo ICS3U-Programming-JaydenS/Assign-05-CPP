@@ -81,6 +81,7 @@ int main() {
             std::cout << "Please enter a valid time range \n";
         }
     }
+    // Calls interest function
     interest = interest_calc(principalFloat, rateFloat, time, timeSinceFloat);
     std::cout << "\n";
     std::cout << "From depositing " << principalFloat << "$"
