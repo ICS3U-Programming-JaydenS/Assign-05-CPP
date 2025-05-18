@@ -76,6 +76,7 @@ int main() {
             } catch (std::invalid_argument) {
                 std::cout << principal << "is not a float!";
             }
+        // If the time range was invalid this happens
         } else {
             std::cout << "Please enter a valid time range \n";
         }
