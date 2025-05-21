@@ -3,10 +3,11 @@
 // Date: May 16, 2025
 // This code calculates the user's interest
 
+#include <iomanip>
 #include <iostream>
 #include <string>
 
-int interest_calc(float p, float r, std::string t, float amt_of_t) {
+float interest_calc(float p, float r, std::string t, float amt_of_t) {
     float interest;
     if (t == "years") {
         interest = p * r * amt_of_t * 0.01;
@@ -29,7 +30,7 @@ int main() {
     float timeSinceFloat;
     float interest;
 
-    // Great user
+    // Greet user
     std::cout
         << "Welcome to Jayden's interest calculator! \n";
 
@@ -60,8 +61,12 @@ int main() {
                         if (rateFloat <= 0) {
                             std::cout <<
                              " Your rate cannot be 0 or negative! \n ";
-                        } else if (timeSinceFloat < 0) {
-                            std::cout << "Your amount of time cannot be 0!\n";
+                        } else if (timeSinceFloat <= 0) {
+                            std::cout <<
+                            "Your amount of time cannot be 0 or negative!!\n";
+                        } else if (principalFloat <= 0) {
+                                std::cout <<
+                                 "Your principal cannot be 0 or negative!\n";
                         } else {
                         // If everything is correct we break from the loop
                             break;
@@ -69,13 +74,13 @@ int main() {
 
                         // If any of the data is erroneous (string) this happens
                     } catch (std::invalid_argument) {
-                        std::cout << timeSince << "is not a float!";
+                        std::cout << timeSince << " is not a float!\n";
                     }
                 } catch (std::invalid_argument) {
-                    std::cout << rate << "is not a float!";
+                    std::cout << rate << " is not a float!\n";
                 }
             } catch (std::invalid_argument) {
-                std::cout << principal << "is not a float!";
+                std::cout << principal << " is not a float!\n";
             }
         // If the time range was invalid this happens
         } else {
@@ -87,12 +92,18 @@ int main() {
 
     // Display answer
     std::cout << "\n";
-    std::cout << "From depositing " << principalFloat << "$"
+    std::cout << "From depositing " << std::fixed <<
+     std::setprecision(2) <<
+     principalFloat <<
+               "$"
               << " For " << timeSinceFloat << " " << time << " with a "
               << rateFloat
-              << "% rate you have made "
-              << interest << "$.\n";
+              << "% rate you have made " <<
+              std::fixed <<
+               std::setprecision(2)
+              << interest <<
+                "$.\n";
     std::cout << "\n";
-    std::cout << "Giving you a total " <<
-    (interest + principalFloat) << "$! \n";
+    std::cout << "Giving you a total " << std::fixed << std::setprecision(2)
+              << (interest + principalFloat) <<  "$! \n";
 }
